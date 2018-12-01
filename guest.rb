@@ -6,5 +6,5 @@ class Guest
   def initialize(name)
     @name = name
   end
-####class initailized test
+  
 end

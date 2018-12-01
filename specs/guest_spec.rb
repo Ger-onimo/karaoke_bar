@@ -9,5 +9,5 @@ class GuestTest < MiniTest::Test
     guest = Guest.new("Charlie")
     assert_equal("Charlie", guest.name)
   end
-####class initailized test
+  #test initialzed
 end
