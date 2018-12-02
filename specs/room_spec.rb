@@ -9,14 +9,6 @@ class RoomTest < MiniTest::Test
 
   def setup
     @room = Room.new("1")
-    # the room number is a string as it is only an identifier for the room,
-    # so not used for calculations
-    # @guest1 = Guest.new("Charlie")
-    # @guest2 = Guest.new("Sam")
-
-    # @song1 = Song.new({title: "Dancing Queen", artist: "ABBA"})
-    # @song2 = Song.new({title: "Park Life", artist: "Blur"})
-
   end
 
   def test_room_has_a_name
@@ -56,6 +48,9 @@ class RoomTest < MiniTest::Test
     @room.guest_check_out("Sam")
     assert_equal(1, @room.guests_number())
   end
+# check guest out and test length of guests in the room
+# to make sure guest has been removed from guest array
+# passed test
 
   def test_check_for_songs_added_to_list
     song = Song.new({title: "Dancing Queen"})

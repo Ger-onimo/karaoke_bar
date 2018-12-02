@@ -3,8 +3,9 @@ class KaraokeBar
 attr_reader :name
 
   def initialize(name)
-    @name = name
-  #  @room = room = []
+    @name = name #MVP
+    # @entry_fee = entry_fee #ext 1
+
   end
 
 

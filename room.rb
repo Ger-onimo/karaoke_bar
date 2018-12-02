@@ -6,9 +6,12 @@ attr_reader :name, :guest, :song
 attr_writer :guest
 
   def initialize(name)
-    @name = name
-    @guest = []
-    @song = []
+    @name = name  #MVP
+    #@capacity = capacity ## ext 1
+    #@guest_spend = guest_spend ##ext 2 (entry fee/drinks etc)
+    @guest = []   #MVP
+    @song = []    #MVP
+
   end
 
   def guests_number()
