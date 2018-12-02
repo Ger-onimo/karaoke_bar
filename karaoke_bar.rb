@@ -1,10 +1,10 @@
 class KaraokeBar
 
-attr_reader :name
+attr_reader :name, :entry_fee
 
-  def initialize(name)
+  def initialize(name, entry_fee)
     @name = name #MVP
-    # @entry_fee = entry_fee #ext 1
+    @entry_fee = entry_fee #ext 1
 
   end
 
