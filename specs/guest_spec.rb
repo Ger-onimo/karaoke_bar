@@ -15,9 +15,10 @@ class GuestTest < MiniTest::Test
     assert_equal(50.0, guest.money)
   end
 
-  # def test_spend_money
-  #   guest = Guest.new("Charlie", 50)
-  #   assert_equal(35.0, guest.spend_money)
-  # end
+  def test_spend_money
+    guest = Guest.new("Charlie", 50)
+
+    assert_equal(35.00, guest.spend_money)
+  end
 
 end

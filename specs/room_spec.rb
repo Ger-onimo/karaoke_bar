@@ -9,15 +9,13 @@ class RoomTest < MiniTest::Test
 
   def setup
     @room1 = Room.new("1", 3)
-    @room2 = Room.new("2", 6)
 
     @guest1 = Guest.new("Charlie", 50)
     @guest2 = Guest.new("Sam", 100)
     @guest3 = Guest.new("Alison", 150)
     @guest4 = Guest.new("Ross", 70)
 
-    # guest_list = [@guest1, @guest2, @guest3, @guest4]
-
+    @guest_list = [@guest1, @guest2, @guest3, @guest4]
   end
 
   def test_room_has_a_name
@@ -32,7 +30,6 @@ class RoomTest < MiniTest::Test
 # passed test
 
   def test_guests_checked_into_room
-    # guest = Guest.new("Charlie", 50)
     @room1.guest_check_in(@guest1)
     assert_equal(1, @room1.guests_number())
   end
@@ -41,8 +38,6 @@ class RoomTest < MiniTest::Test
 # passed test
 
   def test_check_in_two_guests
-    # guest1 = Guest.new("Charlie", 50)
-    # guest2 = Guest.new("Sam", 100)
     @room1.guest_check_in(@guest1)
     @room1.guest_check_in(@guest2)
     assert_equal(2, @room1.guests_number())
@@ -89,15 +84,18 @@ class RoomTest < MiniTest::Test
   def test_capacity_of_room
     assert_equal(3, @room1.capacity)
   end
+  # passed
 
-#   def test_if_capacity_of_room_exceeded
-#   #   # capacity_exceeded =
-#   guest_list = @Guest.new[{name: "Charlie", money: 50}, {name: "Sam", money: 100}]
-#
-# p "this is the guest list" + guest_list.inspect
-#   assert_equal(true, @room1.room_capacity_exceeded(guest_list))
-#   # # actual result will be the room_capacity_exceeded method
-#   # #returning true or false
-#   end
+  def test_if_capacity_of_room_exceeded
+    assert_equal(true, @room1.room_capacity_exceeded(@guest_list))
+  # # actual result will be the room_capacity_exceeded method
+  # #returning true or false
+  end
+
+  # def test_guest_money_collected
+  #   @room1.guest_spend(@guest1)
+  #   assert_equal(15, @room1.receive_entry_fee
+  # end
+
 
 end

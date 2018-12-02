@@ -9,10 +9,9 @@ class Guest
     # @fave_song = fave_song ##ext 2
   end
 
-  # def spend_money(guest)
-  #   @money -=
-  # end
-
+    # def spend_money()
+    #
+    # end
 
 
 end
