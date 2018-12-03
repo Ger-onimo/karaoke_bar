@@ -82,9 +82,9 @@ class RoomTest < MiniTest::Test
 # adding two songs to song list as above
 # passed
 
-  # def test_capacity_of_room
-  #   assert_equal(3, @room1.capacity)
-  # end
+  def test_capacity_of_room
+    assert_equal(3, @room1.capacity)
+  end
   # # passed
   #
   # def test_if_capacity_of_room_exceeded
@@ -93,9 +93,9 @@ class RoomTest < MiniTest::Test
   # # #returning true or false
   # end
 
-  def test_guest_money_collected
-    @room1.guest_spend(@guest1)
-    assert_equal(15, @room1.receive_entry_fee)
-  end
+  # def test_guest_money_collected
+  #   @room1.guest_spend(@guest1)
+  #   assert_equal(15, @room1.receive_entry_fee)
+  # end
 
 end

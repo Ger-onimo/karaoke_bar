@@ -47,8 +47,8 @@ attr_reader :name, :guest_list, :song_list, :capacity, :guest_spend
 # # than capacity return true
 # end
 
-  def take_fee_from_customer(guest)
-    @guest_spend += get_entry_fee
-  end
+  # def take_fee_from_customer(guest)
+  #   @guest_spend += get_entry_fee
+  # end
 
 end
