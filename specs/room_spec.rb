@@ -72,8 +72,9 @@ class RoomTest < MiniTest::Test
 # passed test
 
   def test_add_two_song_to_song_list
-    song1 = Song.new({title: "Dancing Queen"})
-    song2 = Song.new({title: "Parklife"})
+    song1 = Song.new({title: "Dancing Queen", artist: "ABBA"})
+    song2 = Song.new({title: "Parklife", Artist: "Blur"})
+    # song2 = Song.new({title: "Parklife"})
     @room1.song_list(song1)
     @room1.song_list(song2)
     assert_equal(2, @room1.song_list_length())
@@ -81,21 +82,20 @@ class RoomTest < MiniTest::Test
 # adding two songs to song list as above
 # passed
 
-  def test_capacity_of_room
-    assert_equal(3, @room1.capacity)
-  end
-  # passed
-
-  def test_if_capacity_of_room_exceeded
-    assert_equal(true, @room1.room_capacity_exceeded(@guest_list))
-  # # actual result will be the room_capacity_exceeded method
-  # #returning true or false
-  end
-
-  # def test_guest_money_collected
-  #   @room1.guest_spend(@guest1)
-  #   assert_equal(15, @room1.receive_entry_fee
+  # def test_capacity_of_room
+  #   assert_equal(3, @room1.capacity)
+  # end
+  # # passed
+  #
+  # def test_if_capacity_of_room_exceeded
+  #   assert_equal(true, @room1.room_capacity_exceeded(@guest_list))
+  # # # actual result will be the room_capacity_exceeded method
+  # # #returning true or false
   # end
 
+  def test_guest_money_collected
+    @room1.guest_spend(@guest1)
+    assert_equal(15, @room1.receive_entry_fee)
+  end
 
 end

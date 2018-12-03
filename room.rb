@@ -2,12 +2,12 @@ require('pry')
 
 class Room
 
-attr_reader :name, :guest_list, :song_list, :capacity
+attr_reader :name, :guest_list, :song_list, :capacity, :guest_spend
 
   def initialize(name, capacity)
     @name = name  #MVP
     @capacity = capacity ## ext 1
-    #@guest_spend = guest_spend ##ext 2 (entry fee/drinks etc)
+    @guest_spend = guest_spend ##ext 2 (entry fee/drinks etc)
     @guest_list = []   #MVP
     @song_list = []    #MVP
 
@@ -38,15 +38,17 @@ attr_reader :name, :guest_list, :song_list, :capacity
   end
 
 
-  def room_capacity_exceeded(guest_list)
-    if @guest_list.length() >= capacity
-      return true
-    end
-  end
-# if length of the guest_list is greater
-# than capacity return true
-end
+#   def room_capacity_exceeded(guest_list)
+#     if @guest_list.length() >= capacity
+#       return true
+#     end
+#   end
+# # if length of the guest_list is greater
+# # than capacity return true
+# end
 
-  #def take_fee_from_customer
-  #get the entry fee
-  #end
+  def take_fee_from_customer(guest)
+    @guest_spend += get_entry_fee
+  end
+
+end

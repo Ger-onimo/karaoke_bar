@@ -16,8 +16,8 @@ class KaraokeBarTest < MiniTest::Test
     assert_equal( 15, karaoke_bar.entry_fee )
   end
 
-  def test_karaoke_bar_rooms
-
-  end
+  # def test_karaoke_bar_rooms
+  #
+  # end
 
 end
